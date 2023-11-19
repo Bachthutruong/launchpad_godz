@@ -6,6 +6,7 @@ import { zeroAddress } from "viem";
 import { useLocation } from "react-router-dom";
 import { useToast } from "@chakra-ui/react";
 import { useETHPrice } from "../hooks/usePrice";
+
 const duration = 3000;
 const contract: any = process.env.REACT_APP_FARMS_ADDRESS as string;
 const Context = createContext({});

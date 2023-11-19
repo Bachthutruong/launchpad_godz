@@ -2,9 +2,8 @@ import "../../App.scss";
 import "@rainbow-me/rainbowkit/styles.css";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
-import { goerli, mainnet } from "wagmi/chains";
+import {  mainnet } from "wagmi/chains";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
-import { createBrowserRouter, RouterProvider, Route, Link } from "react-router-dom";
 import Farms from "../../pages/Farms";
 import Header from "../../components/Header";
 import { FarmsProvider } from "../../context/farmsContext";
@@ -124,6 +123,7 @@ const theme = extendTheme({
         minHeight: "auto",
         fontFamily: "Calibri",
       },
+
       // styles for the `a`
       a: {
         color: "teal.500",
@@ -138,17 +138,17 @@ const { chains, publicClient } = configureChains(
   [mainnet],
   [
     jsonRpcProvider({
-      rpc: (chain) => ({
+      rpc: () => ({
         http: `https://endpoints.omniatech.io/v1/eth/mainnet/public`,
       }),
     }),
     jsonRpcProvider({
-      rpc: (chain) => ({
+      rpc: () => ({
         http: `https://ethereum.publicnode.com`,
       }),
     }),
     jsonRpcProvider({
-      rpc: (chain) => ({
+      rpc: () => ({
         http: `https://eth.llamarpc.com`,
       }),
     }),

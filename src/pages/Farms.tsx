@@ -1,6 +1,5 @@
 import {
   Flex,
-  Heading,
   Text,
   Accordion,
   AccordionItem,
@@ -257,18 +256,6 @@ const Item = ({ item, search, style, isConduct }: any) => {
       await approve();
     }
   };
-  const extractableBalacne = useMemo(() => {
-    if (!userIdsMsgForPid.length) return 0;
-
-    return new BigNumber(
-      userIdsMsgForPid.reduce((pre: any, cur: any) => {
-        pre = pre.plus(new BigNumber(cur.amount.toString()));
-        return pre;
-      }, new BigNumber(0))
-    )
-      .dividedBy(10 ** decimals)
-      .toFixed(2);
-  }, [userIdsMsgForPid, decimals]);
   const isExtractable = useMemo(() => {
     if (isUnStake) {
       if (unstakeArr.length) {
@@ -523,7 +510,7 @@ const Item = ({ item, search, style, isConduct }: any) => {
                         value={`${_item.ID}_${index}`}
                         className="zillpad-farm-modal-unstake"
                         isChecked={unstakeArr.includes(_item.ID)}
-                        onChange={(e: any) => {
+                        onChange={() => {
                           if (unstakeArr.includes(_item.ID)) {
                             setUnstakeArr(unstakeArr.filter((item: any) => item !== _item.ID));
                           } else {
@@ -711,6 +698,4 @@ export default function Farms() {
     </Flex>
   );
 }
-function useName(token: any) {
-  throw new Error("Function not implemented.");
-}
+

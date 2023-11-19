@@ -1,6 +1,7 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import logo from "../assets/logo.png";
 import { Flex } from "@chakra-ui/react";
+
 const list: any[] = [
   // { name: "Home", link: "/" },
   // { name: "Farms", link: "/farms" },
@@ -15,7 +16,7 @@ export default function Header() {
         </a>
         
         <Flex as="ul" alignItems={"center"} gap="20px">
-          {list.map((item, index) => (
+          {list.map((item) => (
             <Flex as="li" key={item.name}>
               <a href={item.link}>{item.name}</a>
             </Flex>
