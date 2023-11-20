@@ -5,7 +5,8 @@ import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import {  mainnet } from "wagmi/chains";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 import Farms from "../../pages/Farms";
-import Header from "../../components/Header";
+
+// import Header from "../../components/Header";
 import { FarmsProvider } from "../../context/farmsContext";
 
 import { ChakraProvider, defineStyleConfig, extendTheme } from "@chakra-ui/react";
@@ -170,7 +171,6 @@ const Staking = () => {
       <RainbowKitProvider chains={chains}>
         <ChakraProvider theme={theme}>
           <>
-            <Header />
             <FarmsProvider>
               <Farms />
             </FarmsProvider>
