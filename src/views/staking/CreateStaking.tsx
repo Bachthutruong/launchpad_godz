@@ -6,7 +6,6 @@ import {  mainnet } from "wagmi/chains";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 import Farms from "../../pages/Farms";
 
-// import Header from "../../components/Header";
 import { FarmsProvider } from "../../context/farmsContext";
 
 import { ChakraProvider, defineStyleConfig, extendTheme } from "@chakra-ui/react";
@@ -74,7 +73,6 @@ const Button = defineStyleConfig({
     variant: "solid",
   },
 });
-
 const theme = extendTheme({
   components: {
     Button,
@@ -108,21 +106,24 @@ const theme = extendTheme({
   },
   colors: {
     gray: {
-      200: "#e4f5ff",
+      200: "#1261cf",
     },
     teal: {
-      500: "#605d62",
+      500: "#f7f7f8",
     },
+    background: {
+      black: "#000000",
+    }
   },
   styles: {
     global: {
       // styles for the `body`
       html: {
-        fontFamily: "Calibri",
+        fontFamily: "sans-serif",
       },
       body: {
         minHeight: "auto",
-        fontFamily: "Calibri",
+        fontFamily: "sans-serif",
       },
 
       // styles for the `a`
@@ -167,17 +168,17 @@ const wagmiConfig = createConfig({
 });
 const Staking = () => {
   return (
-    <WagmiConfig config={wagmiConfig}>
+    <>
+    <WagmiConfig config={wagmiConfig} >
       <RainbowKitProvider chains={chains}>
-        <ChakraProvider theme={theme}>
-          <>
-            <FarmsProvider>
+        <ChakraProvider theme={theme.colors} >
+            <FarmsProvider >
               <Farms />
             </FarmsProvider>
-          </>
         </ChakraProvider>
       </RainbowKitProvider>
     </WagmiConfig>
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
 import {
   Flex,
+  Heading,
   Text,
   Accordion,
   AccordionItem,
@@ -98,6 +99,7 @@ const StakedCard = ({ className, symbol, userInfo, handleStake, text, isConduct 
   if (!userInfo?.amount && !isConduct) return null;
 
   return (
+    
     <Flex flexDirection={"column"} className={classNames(["stake", className])}>
       <Text className="title" style={{ color: "#9894B1" }}>
         {symbol} <Text as={"span"}>FARMING</Text>
@@ -142,7 +144,7 @@ const ClaimCard = ({
             new BigNumber(pendingToken?.toString() ?? 0).div(10 ** decimals).toFixed(2)
           )}
         </Flex>
-        <Flex className="zillpad-farm-item-harvestBtn">
+        <Flex className="zillpad-connectWallet">
           <Button isDisabled={!Number(pendingToken)} isLoading={isLoading} onClick={harvest}>
             Harvest
           </Button>
@@ -314,7 +316,7 @@ const Item = ({ item, search, style, isConduct }: any) => {
             <Image className="zillpad-farm-item-logo" src={imgs[name] || logo} alt={name} />
             <Flex flexDirection={"column"}>
               <Text className="zillpad-farm-item-name">{name}</Text>
-              <Flex as={Text} fontSize={"3xl"} flexWrap={"wrap"}>
+              <Flex as={Text} fontSize={"16px"} flexWrap={"wrap"}>
                 <Text as="span">Pledge time:</Text>{" "}
                 <Text as="span">{dayjs.duration(Number(item.keepTime) * 1000).asDays()} days</Text>
               </Flex>
@@ -324,6 +326,7 @@ const Item = ({ item, search, style, isConduct }: any) => {
             flexDirection={"column"}
             className="zillpad-farm-item-earned"
             alignItems={"flex-start"}
+            
           >
             <Text className="title">Earned</Text>
             <Text className="value">
@@ -496,7 +499,7 @@ const Item = ({ item, search, style, isConduct }: any) => {
                   {userIdsMsgForPid.map((_item: any, index: any) => {
                     const extractableTime = Number(_item.depositTime + item.keepTime) * 1000;
                     const _endTime = Number(endTime * BigInt(1000));
-                    
+
                     return (
                       <Checkbox
                         isDisabled={
@@ -617,6 +620,8 @@ export default function Farms() {
   
   return (
     <Flex flexDirection={"column"} className="zillpad-farm">
+        <Text className="pageSubTitle" font-family={"sans-serif"}>HOME . STAKING</Text>
+        <Heading className="pageTitle" font-family={"sans-serif"}>STAKING LIST</Heading>
          <Flex flexDirection={"column"} className="zillpad-farm-container">
          <Flex alignItems={"center"} className="zillpad-farm-header">
           <Flex className="zillpad-farm-header-left" alignItems={"center"}>
@@ -649,8 +654,7 @@ export default function Farms() {
                 <Tab>Conduct</Tab>
                 <Tab>Expired</Tab>
               </TabList>
-            </Tabs>
-            
+            </Tabs> 
           </Flex>
           <Flex className="zillpad-connectWallet">
               <ConnectButton />

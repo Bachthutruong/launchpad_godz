@@ -1,15 +1,54 @@
 .zillpad-farm {
-  max-width: 1208px;
   width: 100%;
   margin: 0 auto 0;
   color: #fff;
   gap: 24px;
-  min-height: 100%;
-  padding: 124px 24px 100px;
+  font-family: sans-serif;
+  .pageTitle {
+      font-size: 36px;
+      font-weight: bold;
+      color: orangered;
+      font-family: sans-serif;
+    }
+  
+  .pageSubTitle {
+      font-size: 20px;
+      font-weight: bold;
+      color: orangered;
+      font-family: sans-serif;
+    }
+  .title {
+          font-size: 16px;
+          font-family: sans-serif;
+          font-weight: 400;
+          color: #b5b0d1;
+          margin-bottom: 20px;
+          line-height: 1;
+  }
+    
+  .value {
+          font-size: 16px;
+          font-family: sans-serif;
+          font-weight: 400;
+          line-height: 1;
+          color: #ffffff;
+          display: flex;
+          align-items: center;
+  }
+    
+  .expired {
+          color: #6e6ea0;
+  }
+  &-container {
+    overflow:inherit;
+    background-color: #171c23;
+    width:102%;
+  }
   &-modal-unstake {
     font-size: 24px;
     display: flex;
     width: 100%;
+    font-family: sans-serif;
     justify-content: space-between;
     .chakra-checkbox__control {
       width: 33px;
@@ -24,27 +63,13 @@
       margin-left: 20px;
     }
   }
-  .pageTitle {
-    font-size: 36px;
-    font-weight: bold;
-    color: #ffffff;
-  }
-  .pageSubTitle {
-    font-size: 22px;
-    font-weight: 500;
-    color: #acacb1;
-  }
-  &-container {
-    border-radius: 20px;
-    overflow: hidden;
-    background-color: #1a1a2c;
-  }
+  
   &-header {
-    width: 100%;
+    width:100%;
     padding: 18px 30px;
-    height: 100px;
     justify-content: space-between;
     gap: 28px;
+    font-family: sans-serif;
     flex-wrap: wrap;
     &-styleType {
       gap: 28px;
@@ -52,8 +77,8 @@
         cursor: pointer;
         fill: #d8d6f0;
         &.active {
-          color: #a3ff12;
-          fill: #a3ff12;
+          color: orangered;
+          fill: orangered;
         }
       }
     }
@@ -68,36 +93,45 @@
       flex-flow: row-reverse;
     }
     &-tabs {
-      width: 220px;
+      width: 218px;
       height: 38px;
-      font-size: 22px;
+      font-size: 10px;
       background: #2e2e46;
       border: 1px solid #51517a;
       border-radius: 17px;
+      font-family: sans-serif;
     }
     &-tabList {
       height: 100%;
+      width:100%;
+      font-family: sans-serif;
+      
       button {
-        font-size: 22px;
-        width: 108px;
-        color: #b5b0d1;
+        font-size: 150%;
+        font-family: sans-serif;  
+        width: 100%;
+        color: #e9e7f0;
         &[aria-selected="true"] {
           background-color: #524879;
           color: #fff;
+          border-radius: 17px;
         }
       }
     }
     &-minetype {
       width: 146px;
       margin-left: auto;
+      font-family: sans-serif;
       label {
         font-size: 18px;
         line-height: 1;
         margin-bottom: 14px;
+        font-family: sans-serif;
       }
       select {
         height: 38px;
         border-radius: 38px;
+        font-family: sans-serif;
       }
     }
     &-search {
@@ -105,21 +139,26 @@
       input {
         height: 38px;
         border-radius: 38px;
+        font-family: sans-serif;
       }
     }
     select {
       border-color: #51517a;
       color: #b5b0d1;
       font-size: 22px;
+      font-family: sans-serif;
     }
   }
+  
   &-list {
-    min-height: 834px;
+    width:100%;
+    height:100%;
     // padding: 24px;
-    padding-bottom: 48px;
+    padding-bottom: auto;
     .zillpad-farm-item {
       border-color: #51517a;
       pointer-events: none;
+      font-family: sans-serif;
       button,
       a {
         cursor: pointer;
@@ -143,6 +182,7 @@
         justify-content: space-between;
         width: 100%;
         padding: 34px 40px;
+        font-family: sans-serif;
         &[aria-expanded="true"] {
           .zillpad-farm-item-details {
             display: block;
@@ -154,6 +194,7 @@
       }
       &-details {
         display: block;
+        font-size:20px;
       }
       &-hide {
         display: none;
@@ -162,16 +203,19 @@
       &-apr,
       &-liquidity,
       &-name {
-        width: 100px;
-        white-space: nowrap;
+        max-width: 100%;
+        width: auto;
+        word-wrap: break-word;
+        font-family: sans-serif;
+        
       }
       &-name {
-        width: 100%;
-        white-space: nowrap;
+        max-width: 100%;
+        width: auto;
         text-overflow: ellipsis;
         overflow: hidden;
-        font-size: 30px;
-        font-family: DINPro;
+        font-size: 120%;
+        font-family: sans-serif;
         font-weight: bold;
         color: #ffffff;
         display: flex;
@@ -199,7 +243,7 @@
       }
       &-harvestBtn {
         // width: 140px;
-        // font-size: 18px;
+        font-size: 18px;
         height: 38px;
         button {
           height: 100%;
@@ -215,21 +259,22 @@
           justify-content: center;
         }
         a {
-          font-size: 22px;
-          font-family: Calibri;
-          font-weight: 400;
+          font-size: 15px;
+          font-family: sans-serif;
           text-decoration: underline;
           color: #ffffff;
         }
         &-card {
           padding: 14px 16px 8px;
-          width: 330px;
+          width: 350px;
           height: 90px;
           background: #2e2e46;
+          font-family: sans-serif;
           border: 1px solid #51517a;
           border-radius: 10px;
           .title {
-            font-size: 18px;
+            font-size: 14px;
+            font-family: sans-serif;
             color: #fff;
             margin-bottom: 8px;
             .token {
@@ -241,7 +286,7 @@
             }
           }
           .value {
-            font-size: 18px;
+            font-size: 16px;
             margin-bottom: 8px;
           }
           .bottom {
@@ -267,7 +312,7 @@
       justify-content: center;
       .zillpad-farm-item {
         width: 364px;
-        background: #1a192b;
+        background: #171c23;
         border: 1px solid #51517a;
         border-radius: 20px;
         div {
@@ -356,7 +401,7 @@
           font-size: 22px;
           flex-direction: column;
           .title {
-            font-size: 18px;
+            font-size: 16px;
             color: #fff;
           }
           .value {
@@ -370,12 +415,15 @@
           }
           .zillpad-farm-item-stakeGroup {
             margin-top: 16px;
+            font-size: 14px;
+            height: 38px;
           }
           .zillpad-farm-item-harvestBtn {
             width: 140px;
           }
           button {
-            height: 54px;
+            height: 38px;
+            font-size: 14px;
           }
         }
         .title {
@@ -384,33 +432,16 @@
       }
     }
   }
-  .title {
-    font-size: 18px;
-    font-family: Calibri;
-    font-weight: 400;
-    color: #b5b0d1;
-    margin-bottom: 20px;
-    line-height: 1;
-  }
-  .value {
-    font-size: 24px;
-    font-family: Calibri;
-    font-weight: 400;
-    line-height: 1;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-  }
-  .expired {
-    color: #6e6ea0;
-  }
+  
   &-item-stakeGroup {
     gap: 12px;
     div {
       width: 100%;
     }
   }
+  
 }
+
 .zillpad-farm-modal {
   &-content {
     width: calc(100% - 40px) !important;
@@ -538,13 +569,15 @@
     &-list {
       &.zillpad-farm-card {
         .zillpad-farm-item {
-          width: calc(50% - 20px);
+          width: calc(80% - 20px);
         }
       }
     }
   }
 }
+
 @media (max-width: 860px) {
+  
   .zillpad-farm {
     margin: 0 auto 0;
     gap: 0.24rem;
@@ -565,44 +598,42 @@
       }
     }
     .pageTitle {
-      font-size: 0.36rem;
+      font-size: 1.5rem;
     }
     .pageSubTitle {
-      font-size: 0.22rem;
+      font-size: 1rem;
     }
     &-container {
       border-radius: 0.2rem;
+      width:100%;
     }
+    
     &-header {
       width: 100%;
-      padding: 0.18rem 0.3rem;
-      height: 1rem;
+      height: 100%;
       gap: 0.28rem;
-      &-styleType {
+      &-styleType { 
         gap: 0.28rem;
       }
       &-left,
       &-right {
-        gap: 0.28rem;
+        gap: 0.5rem;
       }
       &-left {
-        width: 100%;
-        gap: 0;
-        justify-content: space-between;
+        
       }
       &-tabs {
-        width: 2.2rem;
-        height: 0.5rem;
-        line-height: 0.5rem;
+        width: 9rem;
+        height: 2rem;  
         border: 0.01rem solid #51517a;
-        border-radius: 0.25rem;
+        border-radius: 1rem;
       }
       &-tabList {
-        height: 100%;
+        width:5.5rem;
         button {
-          width: 1.08rem;
-          font-size: 0.22rem;
-          border-radius: 0.25rem;
+          width: 4.5rem;
+          font-size: auto;
+          border-radius: 1rem;
         }
       }
       &-minetype {
@@ -635,18 +666,20 @@
         }
       }
     }
+    
     &-list {
       min-height: 8.34rem;
-
       // padding: 24px;
-      padding-bottom: 0.48rem;
+      
       .zillpad-farm-item {
+        width:105%;
+        
         &:last-child {
           border-bottom: 0;
         }
         &-button {
           width: 100%;
-          padding: 0.36rem 0.22rem;
+          padding: 0.36rem 0rem;
           .zillpad-farm-item-details {
             display: block !important;
           }
@@ -662,70 +695,79 @@
             }
           }
         }
+        &-earned{
+          font-size:0.1rem;
+        }
         &-earned,
         &-apr,
         &-liquidity,
         &-name {
-          width: 1rem;
+          width: 5rem;
+          font-size:0.1rem;
+          
+          
         }
         &-name {
           width: auto;
-          font-size: 0.28rem;
+          font-size: 0.8rem;
+          white-space: nowrap;
+          
         }
         &-logo {
-          width: 0.6rem;
-          margin-right: 0.34rem;
+          width: 2.5rem;
+          margin-right: 0.2rem;
         }
         &-share {
-          width: 0.5rem;
-          height: auto;
           align-items: center;
           img {
-            width: 0.36rem;
-            height: 0.36rem;
+            width: 0.8rem;
+            height: 0.8rem;
           }
         }
+        
         &-panel {
           flex-direction: column;
           align-items: flex-start;
-          padding: 0 0.26rem 0.42rem 0.26rem;
-          gap: 0.2rem;
+          
           .zillpad-farm-item-links {
-            gap: 0.22rem;
+            
             order: 4;
           }
           a {
-            font-size: 0.22rem;
+            font-size: 0.8rem;
           }
           &-card {
             width: 100%;
-            padding: 0.14rem 0.16rem;
             height: auto;
             border: 0.01rem solid #51517a;
-            border-radius: 0.1rem;
+            border-radius: 0.5rem;
             // margin-bottom: 0.2rem;
             .title {
-              font-size: 0.18rem;
+              font-size: 0.8rem;
               p {
                 margin-left: 0.04rem;
               }
             }
           }
         }
-        &-liquidity,
+        
+        
         &-hide,
         &-details {
           display: none;
         }
+        &-details{
+          font-size:1rem;
+        }
         &-stakeGroup {
           button {
-            height: 0.5rem;
-            font-size: 0.24rem;
+            height: 2.5rem;
+            font-size: 0.8rem;
           }
         }
         &-stakedBtn {
-          font-size: 0.22rem;
-          height: 0.5rem;
+          font-size: 0.8rem;
+          height: 2.5rem;
         }
         &-harvestBtn {
           height: 0.5rem;
@@ -739,115 +781,25 @@
         .title {
           margin-bottom: 0.18rem;
         }
+        
       }
 
-      &.zillpad-farm-card {
-        gap: 0.18rem;
-        padding: 0 0.2rem;
-        .zillpad-farm-item {
-          width: 100%;
-          border: 0.01rem solid #51517a;
-          border-radius: 0.2rem;
-          div {
-            width: 100%;
-          }
-          .zillpad-farm-item-info,
-          .zillpad-farm-item-apr,
-          .zillpad-farm-item-earned,
-          .zillpad-farm-item-cardAction {
-            padding: 0 0.26rem;
-          }
-          .zillpad-farm-item-container {
-            flex-direction: column;
-            padding: 0.48rem 0.26rem 0;
-          }
-          .zillpad-farm-item-apr,
-          .zillpad-farm-item-earned {
-            flex-direction: row;
-            width: 100%;
-            justify-content: space-between;
-            align-items: center;
-          }
-          .zillpad-farm-item-button {
-            gap: 0.2rem;
-            padding: 0.34rem 0 0;
-            .zillpad-farm-item-details {
-              display: block !important;
-            }
-            .zillpad-farm-item-hide {
-              display: none !important;
-            }
-            &[aria-expanded="true"] {
-              .zillpad-farm-item-details {
-                display: none !important;
-              }
-              .zillpad-farm-item-hide {
-                display: block !important;
-              }
-            }
-          }
-          .zillpad-farm-item-logo {
-            margin-right: 0.26rem;
-          }
-          .zillpad-farm-item-share {
-            top: 0.42rem;
-            right: 0.2rem;
-            width: 0.5rem !important;
-            height: auto;
-            justify-content: center;
-            align-items: center;
-            img {
-              width: 0.34rem;
-              height: 0.34rem;
-              object-fit: contain;
-              flex-shrink: 0;
-            }
-          }
-          .zillpad-farm-item-expanded {
-            height: 0.94rem;
-            width: 100%;
-            font-size: 0.24rem;
-            border-top: 0.01rem solid #51517a;
-          }
-          .zillpad-farm-item-cardAction {
-            font-size: 0.22rem;
-            div {
-              justify-content: space-between;
-            }
-            .title {
-              font-size: 0.24rem;
-            }
-            .value {
-              font-size: 0.24rem;
-              margin-top: 0.14rem;
-              margin-bottom: 0.16rem;
-            }
-            .stake {
-              margin-top: 0.1rem;
-              .title {
-                color: #fff !important;
-              }
-            }
-            .zillpad-farm-item-stakeGroup {
-              margin-top: 0.16rem;
-            }
-            button {
-              height: 0.54rem;
-            }
-          }
-        }
-      }
+      
     }
+    
     .title {
-      font-size: 0.22rem;
+      font-size: 0.95rem;
       margin-bottom: 0.2rem;
     }
+    
     .value {
-      font-size: 0.24rem;
+      font-size: 0.95rem;
     }
+    
     &-item-stakeGroup {
       gap: 0.12rem;
     }
+    
     &-item {
       &-panel {
         &-liquidity {
@@ -860,7 +812,9 @@
         }
       }
     }
+    
   }
+  /**
   .zillpad-farm-modal {
     &-content {
       max-width: 100% !important;
@@ -952,4 +906,7 @@
       }
     }
   }
+  **/
 }
+
+

@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { useSelector } from 'src/store/Store';
 import { Link } from 'react-router-dom';
-import { ReactComponent as LogoDark } from 'src/assets/images/logos/dark-logo.svg';
-import { ReactComponent as LogoDarkRTL } from 'src/assets/images/logos/dark-rtl-logo.svg';
-import { ReactComponent as LogoLight } from 'src/assets/images/logos/light-logo.svg';
-import { ReactComponent as LogoLightRTL } from 'src/assets/images/logos/light-logo-rtl.svg';
+import { ReactComponent as LogoDark } from 'src/assets/images/logos/launchpad.svg';
+import { ReactComponent as LogoDarkRTL } from 'src/assets/images/logos/launchpad.svg';
+import { ReactComponent as LogoLight } from 'src/assets/images/logos/launchpad.svg';
+import { ReactComponent as LogoLightRTL } from 'src/assets/images/logos/launchpad.svg';
 import { styled } from '@mui/material';
 import { AppState } from 'src/store/Store';
 

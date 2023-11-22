@@ -14,7 +14,7 @@ import * as dropdownData from './data';
 
 import { IconMail } from '@tabler/icons';
 
-import ProfileImg from 'src/assets/images/profile/user-1.jpg';
+import ProfileImg from 'src/assets/images/products/Chain2.png';
 import unlimitedImg from 'src/assets/images/backgrounds/unlimited-bg.png';
 
 const Profile = () => {
