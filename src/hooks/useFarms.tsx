@@ -42,11 +42,11 @@ export function usePoolInfo(pid: number) {
     address: contract,
     abi,
     functionName: "poolInfo",
-    args: [pid ],
+    args: [pid],
     enabled: pid !== undefined,
     watch: true,
   });
-  
+
   return {
     token: poolInfo?.[0],
     startTime: poolInfo?.[1],
