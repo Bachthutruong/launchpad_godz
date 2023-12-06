@@ -95,6 +95,7 @@ export function useETHPrice() {
     watch: true,
     enabled: chainId === 1 || chainId === 0x1,
   });
+
   return new BigNumber(ethPrice?.[1]).dividedBy(10 ** 8).toNumber() || ethPrice;
 }
 export function useTokenPrice(token: any, decimals = 18) {
@@ -102,8 +103,7 @@ export function useTokenPrice(token: any, decimals = 18) {
   const [price, setPrice] = useState({ price: 0, token0Price: 0, token1Price: 0 });
   const chainId = useChainId();
   const { weth } = useFarmsContext();
-  // let [token0, token1] = [weth, token];
-  let [token0, token1] = [weth, token];
+  const [token0, token1] = [weth, token];
   const { decimals: token0Decimal } = useToken(token0);
   const { decimals: token1Decimal } = useToken(token1);
   let type: Chain = "uni";
@@ -120,11 +120,11 @@ export function useTokenPrice(token: any, decimals = 18) {
           BigInt(1) * BigInt(10 ** (decimals ?? 18)),
           [token0, token1]
         );
-        let token0Price = new BigNumber(price[0].toString())
+        const token0Price = new BigNumber(price[0].toString())
           .dividedBy(10 ** token0Decimal)
           .multipliedBy(ethPrice)
           .toNumber();
-        let token1Price = new BigNumber(price[1].toString())
+        const token1Price = new BigNumber(price[1].toString())
           .dividedBy(10 ** token0Decimal)
           .multipliedBy(ethPrice)
           .toNumber();
@@ -149,24 +149,11 @@ export function useTokenPrice(token: any, decimals = 18) {
             ],
             functionName: "token0",
           });
-          const token1: any = await readContract({
-            address: token,
-            abi: [
-              {
-                inputs: [],
-                name: "token1",
-                outputs: [{ internalType: "address", name: "", type: "address" }],
-                stateMutability: "view",
-                type: "function",
-              },
-            ],
-            functionName: "token1",
-          });
           try {
             // is v2
-            const [_reserve0, _reserve1, _]: any = await getReserves(token);
-            let token0Amount = new BigNumber(_reserve0.toString()).dividedBy(10 ** token0Decimal);
-            let token1Amount = new BigNumber(_reserve1.toString()).dividedBy(10 ** token1Decimal);
+            const [_reserve0, _reserve1]: any = await getReserves(token);
+            const token0Amount = new BigNumber(_reserve0.toString()).dividedBy(10 ** token0Decimal);
+            const token1Amount = new BigNumber(_reserve1.toString()).dividedBy(10 ** token1Decimal);
             let token0Price, token1Price;
             if (token0.toLowerCase() === weth.toLowerCase()) {
               token0Price = ethPrice;
@@ -213,7 +200,6 @@ export function useTokenPrice(token: any, decimals = 18) {
               ],
               functionName: "slot0",
             });
-            // 如果没有v2价格时，可以认为token是lp token
             if (slot0) {
               // 当没有Slot0时，可以认为是lp Token
               const sqrtPriceX96 = new BigNumber(slot0[0].toString());

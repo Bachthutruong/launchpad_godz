@@ -10,6 +10,7 @@ import {
 import { readContract } from "@wagmi/core";
 import { zeroAddress } from "viem";
 import { getReserves } from "./usePrice";
+
 const contract: any = process.env.REACT_APP_FARMS_ADDRESS as string;
 const maxUint256 = BigInt("0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
 export default function useToken(token?: any) {
@@ -17,7 +18,7 @@ export default function useToken(token?: any) {
   const [token0, setToken0] = useState("");
   const [token1, setToken1] = useState("");
   const [isLpToken, setIsLpToken] = useState(false);
-  const [approveState, setApproveState] = useState("approved");
+  const [approveState] = useState("approved");
   const { data: symbol }: any = useContractRead({
     address: token,
     abi: erc20ABI,
@@ -101,6 +102,7 @@ export default function useToken(token?: any) {
       }
     })();
   }, [token]);
+  
   return {
     token0,
     token1,

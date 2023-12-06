@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getReserves } from "./usePrice";
 import { erc20ABI, useContractRead } from "wagmi";
 import BigNumber from "bignumber.js";
+
 export function useLiquidity(token: any, lpBalance: any, isLpToken: boolean, price: any) {
   const [totalLiquidity, setTotalLiquidity] = useState<number | string>(0);
   const { data: totalSupply } = useContractRead({

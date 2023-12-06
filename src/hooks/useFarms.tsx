@@ -1,5 +1,6 @@
 import { useAccount, useContractRead } from "wagmi";
 import abi from "../pools/farm.json";
+
 const contract: any = process.env.REACT_APP_FARMS_ADDRESS as string;
 
 export function usePendingToken(pid: number) {
@@ -27,6 +28,7 @@ export function usePoolUserInfo(pid: number) {
     enabled: !!address,
     watch: true,
   });
+
   return {
     userInfo: {
       startTime: userInfo?.[0],
@@ -40,10 +42,11 @@ export function usePoolInfo(pid: number) {
     address: contract,
     abi,
     functionName: "poolInfo",
-    args: [pid],
+    args: [pid ],
     enabled: pid !== undefined,
     watch: true,
   });
+  
   return {
     token: poolInfo?.[0],
     startTime: poolInfo?.[1],
