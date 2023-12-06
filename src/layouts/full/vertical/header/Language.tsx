@@ -50,7 +50,6 @@ const Language = () => {
   };
   useEffect(() => {
     i18n.changeLanguage(customizer.isLanguage);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import { fetchBlogPost } from 'src/store/apps/blog/BlogSlice';
 import { useLocation } from 'react-router-dom';

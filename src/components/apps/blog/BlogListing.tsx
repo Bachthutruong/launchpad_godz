@@ -14,7 +14,6 @@ const BlogListing = () => {
     dispatch(fetchBlogPosts());
   }, [dispatch]);
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const filterBlogs = (posts: BlogPostType[], sortBy: string, _cSearch: string) => {
     // SORT BY
 
