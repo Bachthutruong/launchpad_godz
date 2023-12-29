@@ -618,10 +618,10 @@ export default function Mint() {
   };  
   return (
     <Flex flexDirection={"column"} className="zillpad-farm">
-        <Flex justifyContent="center"> {/* Thêm một Flex container để chứa iframe */}
+        <Flex justifyContent="center"> {}
         <iframe
           title="Embedded Website"
-          src="http://127.0.0.1:5500/index.html#/mint" // Thay thế bằng URL của trang web bạn muốn nhúng
+          src="https://gburn.vercel.app/#/mint" 
           width="120%"
           height="1000px"
         ></iframe>
