@@ -19,11 +19,11 @@ const Modern = () => {
   return (
     <PageContainer title="Modern Dashboard" description="this is Modern Dashboard page">
       <iframe
-          title="Embedded Website"
-          src="https://gburn.vercel.app/#/mint" 
-          width="100%"
-          height="1000px"
-        ></iframe>
+        title="Embedded Website"
+        src="https://gburn.vercel.app/#/mint"
+        width="100%"
+        height="1000px"
+      ></iframe>
     </PageContainer>
   );
 };
